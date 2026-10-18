@@ -1,0 +1,72 @@
+object DemoForm: TDemoForm
+  Left = 10
+  Height = 200
+  Top = 10
+  Width = 440
+  Caption = 'HotKey'
+  ClientHeight = 200
+  ClientWidth = 440
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '4.99.0.0'
+  object PickLabel: TLabel
+    Left = 16
+    Height = 15
+    Top = 16
+    Width = 320
+    Caption = 'Shortcut for File > Save. A alone is stored as Alt+A:'
+  end
+  object HotKey1: THotKey
+    Left = 16
+    Height = 21
+    Top = 38
+    Width = 121
+    HotKey = 16467
+    TabOrder = 0
+    OnChange = HotKey1Change
+  end
+  object ValueLabel: TLabel
+    Left = 16
+    Height = 15
+    Top = 76
+    Width = 60
+    Caption = 'ValueLabel'
+  end
+  object AnyLabel: TLabel
+    Left = 16
+    Height = 15
+    Top = 110
+    Width = 300
+    Caption = 'InvalidKeys = [], so any combination is stored as pressed:'
+  end
+  object HotKey2: THotKey
+    Left = 16
+    Height = 21
+    Top = 132
+    Width = 121
+    HotKey = 112
+    InvalidKeys = []
+    Modifiers = [hkCtrl]
+    TabOrder = 1
+    OnChange = HotKey2Change
+  end
+  object Value2Label: TLabel
+    Left = 16
+    Height = 15
+    Top = 170
+    Width = 66
+    Caption = 'Value2Label'
+  end
+  object MainMenu1: TMainMenu
+    Left = 360
+    Top = 120
+    object FileMenu: TMenuItem
+      Caption = '&File'
+      object SaveItem: TMenuItem
+        Caption = '&Save'
+        OnClick = SaveItemClick
+      end
+    end
+  end
+end
